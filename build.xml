@@ -54,7 +54,7 @@
     <target name="init">
         <mkdir dir="build/classes"/>
         <copy includeemptydirs="false" todir="build/classes">
-            <fileset dir="src/main/java">
+            <fileset dir="src/main/">
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
@@ -87,20 +87,5 @@
         <antcall target="build"/>
     </target>
               	
-              	<!--- belo target tag is created manually to generate the war file  -->
-              	
-              	<target name="war" description="Bundles the application as a WAR file" depends="clean, build">
-              	    <mkdir dir="WebContent/WEB-INF/classes"/>
-              	     
-              	    <copy includeemptydirs="false" todir="WebContent/WEB-INF/classes">
-              	            <fileset dir="build/classes">
-              	            <include name="**/*.class"/>
-              	            </fileset>
-              	    </copy>
-              	     
-              	    <war destfile="UploadServlet30.war"
-              	        basedir="WebContent"
-              	        needxmlfile="false">
-              	    </war>
-              	</target>              	
+                          	
 </project>
